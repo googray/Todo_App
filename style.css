@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+}
+
+html {
+  background: radial-gradient(circle at bottom, navy 0, #000 100%);
+}
+
+.todo-question {
+  color: #f8b34b;
+  margin: 32px, 0;
+  font-size: 24px;
+}
