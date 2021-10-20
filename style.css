@@ -10,8 +10,108 @@ html {
   background: radial-gradient(circle at bottom, navy 0, #000 100%);
 }
 
+body {
+  background: radial-gradient(circle at bottom, navy 0, #000 100%);
+  height: 100vh;
+}
+
+.todo-field {
+  display: block;
+}
+
 .todo-question {
   color: #f8b34b;
-  margin: 32px, 0;
+  margin: 32px 0;
   font-size: 24px;
+}
+
+.todo-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 520px;
+  min-height: 600px;
+  background: #161a2b;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+.todo-form {
+  margin: 0 0 32px;
+}
+
+.todo-input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: solid 2px #0cffc2;
+  width: 320px;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+
+.todo-input.edit {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: solid 2px #149fff;
+  width: 320px;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+
+::placeholder {
+  color: rgb(224, 6, 213);
+  font-size: 1em;
+}
+
+.todo-button {
+  padding: 16px;
+  border: none;
+  outline: none;
+  border-radius: 0 4px 4px 0;
+  color: #fff;
+  background: linear-gradient(90deg, #5d0cff, #9b00fa);
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.delete-icon {
+  background-image: url(/delete-icon.svg);
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.edit-icon {
+  background-image: url(/edit-icon.svg);
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  border-radius: 5px;
+  align-items: center;
+  /* border: none; */
+  margin: 4px auto;
+  padding: 16px;
+  color: #fff;
+  background: linear-gradient(39deg, #24001f 6%, #090979 44%, #00d4ff);
+}
+
+.todo-row:nth-child(4n + 1) {
+  background: linear-gradient(39deg, #143e91 4%, #e30b0b 45%, #00ffde);
+}
+.todo-row:nth-child(4n + 2) {
+  background: linear-gradient(39deg, #5e0404 4%, #f3f503 45%, #5e00ff);
+}
+.todo-row:nth-child(4n + 3) {
+  background: linear-gradient(39deg, #2ca470 7%, #f503cf 42%, #099de4);
 }
