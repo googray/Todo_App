@@ -1,39 +1,33 @@
 const containerTodoMaker = document.querySelector(".todo-input");
-// console.log(containerTodoMaker);
+
 const containerTodoEdit = document.querySelector(".todo-input .edit");
 const containerTodoRow = document.querySelector(".todo-task");
 
 const btnTodo = document.querySelector(".btn-add");
 const btnUpdate = document.querySelector(".btn-edit");
+const btnRemove = document.querySelector(".delete-icon");
+const todoContent = document.querySelector(".todo-content");
+const todoField = document.querySelector(".todo-field");
 // const tagClose
 // const tagEdit
 
-const displayTodo = function (text) {
-  containerTodoMaker.innerHTML = "";
-
-  //   todo.forEach(function (tdo, i) {
+function displayTodo() {
+  // containerTodoMaker.innerHTML = "";
   const html = `
-        <div class="todo-row">
-            <div class="todo-task">${text}</div>
-            <div class="icons">
-              <svg class="delete-icon"></svg>
-              <svg class="edit-icon"></svg>
-            </div>
-          </div>
-        `;
-  containerTodoMaker.insertAdjacentHTML("afterbegin", html);
-  //   });
-};
+           <div class="todo-row">
+               <div class="todo-task">sadfgh</div>
+               <div class="icons">
+                 <svg class="delete-icon"></svg>
+                 <svg class="edit-icon"></svg>
+               </div>
+             </div>
+           `;
+  document.querySelector(".todo-field").insertAdjacentHTML("beforeend", html);
+}
 
-btnTodo.addEventListener("click", function (e) {
-  e.preventDefault();
-  console.log("DONE");
-  const text = containerTodoMaker.value;
-  console.log(text);
-  displayTodo(text);
-  //   updateUI(currentAccount);
-});
+function removeTodo(input) {
+  input.parentNode.remove();
+}
 
-// const updateUI = function (acc) {
-//   displayTodo(acc);
-// };
+btnTodo.addEventListener("click", displayTodo);
+// btnRemove.addEventListener("click", removeTodo);
