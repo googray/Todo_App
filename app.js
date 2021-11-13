@@ -2,56 +2,58 @@ const containerTodoMaker = document.querySelector(".todo-input");
 
 const containerTodoEdit = document.querySelector(".todo-input .edit");
 const containerTodoRow = document.querySelector(".todo-task");
-
+const toDoApp = document.querySelector(".todo-app");
 const btnTodo = document.querySelector(".btn-add");
 const update = document.querySelector(".btn-edit");
 
 const todoContent = document.querySelector(".todo-content");
-const todoField = document.querySelector(".todo-field");
+let todoField = document.querySelector(".todo-field");
 
 const input = document.querySelector(".todo-input");
-const row = document.querySelector(".todo-row");
-// const tagClose
-// const tagEdit
 
+let todoText;
 function displayTodo(e) {
   // containerTodoMaker.innerHTML = "";
   e.preventDefault();
+
+  if (todoText !== input.value) {
+    todoText = input.value;
+  } else {
+    console.log("stop");
+  }
+
   const html = `
            <div class="todo-row">
-               <div class="todo-task">sadfgh</div>
-               <div class="icons">
+               <div class="todo-task">${todoText}</div>
+               
                  <svg class="delete-icon"></svg>
                  <svg class="edit-icon"></svg>
-               </div>
+              
              </div>
            `;
   document.querySelector(".todo-field").insertAdjacentHTML("beforeend", html);
-
-  const remove = document.getElementsByClassName(".delete-icon");
-  let i;
-  for (i = 0; i < remove.length; i++) {
-    remove[i].onclick = function () {
-      let div = this.parentElement;
-      div.style.display = "none";
-    };
-  }
+  input.value = "";
 }
-
+//
 btnTodo.addEventListener("click", displayTodo);
 
-function check(e) {
-  if (e.target.className === ".todo-row") {
-    e.target.classList.toggle("checked");
+const removeRow = document.getElementsByClassName("delete-icon");
+
+const row = document.querySelector(".todo-row");
+
+toDoApp.addEventListener("click", deleteRow);
+
+function deleteRow(e) {
+  const item = e.target;
+  //DELETE ROW
+  if (item.classList[0] === "delete-icon") {
+    let todo = item.parentElement;
+    todo.remove();
+  }
+
+  //CHECKED ROW
+  if (item.classList[0] === "todo-task") {
+    const todo = item.parentElement;
+    todo.classList.toggle("checked");
   }
 }
-todoField.addEventListener("click", check);
-
-// const remove = document.querySelector(".delete-icon");
-// let i;
-// for (i = 0; i < remove.length; i++) {
-//   remove[i].onclick = function () {
-//     let div = this.parentElement;
-//     div.style.display = "none";
-//   };
-// }

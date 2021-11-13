@@ -108,6 +108,12 @@ body {
   background: linear-gradient(39deg, #24001f 6%, #090979 44%, #00d4ff);
 }
 
+.todo-task {
+  flex: 1;
+  display: flex;
+  flex-flow: row left;
+}
+
 .todo-row:nth-child(4n + 1) {
   background: linear-gradient(39deg, #143e91 4%, #e30b0b 45%, #00ffde);
 }
@@ -116,4 +122,9 @@ body {
 }
 .todo-row:nth-child(4n + 3) {
   background: linear-gradient(39deg, #2ca470 7%, #f503cf 42%, #099de4);
+}
+
+.checked {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
