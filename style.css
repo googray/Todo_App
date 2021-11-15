@@ -128,3 +128,51 @@ body {
   text-decoration: line-through;
   opacity: 0.5;
 }
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  inset: 0px;
+  background-color: rgba(255, 255, 255, 0.75);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+#overlay-message--box {
+  /* background: #6a6e6d; */
+  background: linear-gradient(39deg, #787c7a 7%, #dab143 42%, #099de4);
+  border-radius: 30px;
+  justify-content: center;
+  height: 135px;
+  width: auto;
+  text-align: center;
+  margin: 50px 25px 0;
+}
+
+#overlay-message--box h2 {
+  color: #f71717;
+  margin: 0 0 15px;
+  height: 20px;
+}
+
+#overlay-message--box p {
+  font-size: 1.2em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#overlay-message--box button {
+  padding: 16px;
+  border: none;
+  border-radius: 0 20px 0 20px;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(90deg, #5d0cff, #9b00fa);
+  color: #fff;
+  margin-top: 15px;
+  cursor: pointer;
+}

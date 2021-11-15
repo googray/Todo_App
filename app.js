@@ -2,13 +2,11 @@ const containerTodoMaker = document.querySelector(".todo-input");
 
 const containerTodoEdit = document.querySelector(".todo-input .edit");
 const containerTodoRow = document.querySelector(".todo-task");
-const toDoApp = document.querySelector(".todo-app");
+const todoApp = document.querySelector(".todo-app");
 const btnTodo = document.querySelector(".btn-add");
 const update = document.querySelector(".btn-edit");
-
 const todoContent = document.querySelector(".todo-content");
 let todoField = document.querySelector(".todo-field");
-
 const input = document.querySelector(".todo-input");
 
 let todoText;
@@ -18,8 +16,10 @@ function displayTodo(e) {
 
   if (todoText !== input.value) {
     todoText = input.value;
+    off();
   } else {
-    console.log("stop");
+    todoText = input.value;
+    on();
   }
 
   const html = `
@@ -37,11 +37,23 @@ function displayTodo(e) {
 //
 btnTodo.addEventListener("click", displayTodo);
 
+const overLay = document.querySelector("#overlay");
+const btnKnow = document.querySelector(".overlay-button");
+
+// OVERLAY ON
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+// OVERLAY OFF
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+overLay.addEventListener("click", off);
+btnKnow.addEventListener("click", off);
+
 const removeRow = document.getElementsByClassName("delete-icon");
-
 const row = document.querySelector(".todo-row");
-
-toDoApp.addEventListener("click", deleteRow);
 
 function deleteRow(e) {
   const item = e.target;
@@ -50,6 +62,8 @@ function deleteRow(e) {
     let todo = item.parentElement;
     todo.remove();
   }
+
+  todoApp.addEventListener("click", deleteRow);
 
   //CHECKED ROW
   if (item.classList[0] === "todo-task") {
