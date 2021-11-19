@@ -15,7 +15,7 @@
   </head>
   <body>
     <div id="root">
-      <div class="todo-app">
+      <div class="todo-app" id="app">
         <div class="todo-field">
           <h1 class="todo-question">What's the task for Today?</h1>
           <!-- TODO FORM -->
@@ -30,8 +30,24 @@
               /><button class="todo-button btn-add">Add Todo</button>
             </form>
           </div>
-          <!-- TODO FORM UPDATE -->
-          <!-- <div class="todo-content">
+        </div>
+      </div>
+      <div class="todo-app' id="edit-app">
+        <div class="todo-field">
+          <h1 class="todo-question">What's the task for Today?</h1>          
+          <div class="todo-content">
+            <form action="" class="todo-form">
+              <input
+                type="text"
+                class="todo-input"
+                name="text"
+                placeholder="Add a todo item"
+                value
+              /><button class="todo-button btn-add">Add Todo</button>
+            </form>
+          </div>
+      <!-- TODO FORM UPDATE -->
+      <div class="todo-content">
             <form action="" class="todo-form">
               <input
                 type="text"
@@ -41,15 +57,7 @@
                 value=""
               /><button class="todo-button btn-edit">Update</button>
             </form>
-          </div> -->
-          <!-- NEW TODO ROW -->
-          <!-- <div class="todo-row checked">
-            <div class="todo-task"></div>
-            <div class="icons">
-              <svg class="delete-icon"></svg>
-              <svg class="edit-icon"></svg>
-            </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>

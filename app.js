@@ -56,6 +56,7 @@ const removeRow = document.getElementsByClassName("delete-icon");
 const row = document.querySelector(".todo-row");
 
 function deleteRow(e) {
+  console.log(e.target);
   const item = e.target;
   //DELETE ROW
   if (item.classList[0] === "delete-icon") {
@@ -63,11 +64,37 @@ function deleteRow(e) {
     todo.remove();
   }
 
-  todoApp.addEventListener("click", deleteRow);
-
   //CHECKED ROW
   if (item.classList[0] === "todo-task") {
-    const todo = item.parentElement;
+    let todo = item.parentElement;
     todo.classList.toggle("checked");
   }
+
+  if (item.classList[0] === "edit-icon") {
+    document.getElementById("edit-app").style.display = "block";
+    document.getElementById("app").style.display = "none";
+  }
+
+  if (item.classList[0] === "btn-edit") {
+    document.getElementById("edit-app").style.display = "none";
+    document.getElementById("app").style.display = "block";
+  }
 }
+
+todoApp.addEventListener("click", deleteRow);
+
+const editRow = document.getElementsByClassName("edit-icon");
+
+// // EDIT ON
+// function onEdit() {
+//   document.getElementById("edit-app").style.display = "block";
+//   document.getElementById("app").style.display = "none";
+// }
+// // EDIT OFF
+// function offEdit() {
+//   document.getElementById("edit-app").style.display = "none";
+//   document.getElementById("app").style.display = "block";
+// }
+
+// editRow.addEventListener("click", onEdit);
+// update.addEventListener("click", offEdit);

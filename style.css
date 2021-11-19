@@ -6,23 +6,13 @@
     Arial, sans-serif;
 }
 
-html {
+/* html {
   background: radial-gradient(circle at bottom, navy 0, #000 100%);
-}
+} */
 
 body {
   background: radial-gradient(circle at bottom, navy 0, #000 100%);
   height: 100vh;
-}
-
-.todo-field {
-  display: block;
-}
-
-.todo-question {
-  color: #f8b34b;
-  margin: 32px 0;
-  font-size: 24px;
 }
 
 .todo-app {
@@ -36,6 +26,29 @@ body {
   margin: 128px auto;
   border-radius: 10px;
   padding-bottom: 32px;
+}
+
+#edit-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 520px;
+  min-height: 600px;
+  background: #161a2b;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+.todo-field {
+  display: block;
+}
+
+.todo-question {
+  color: #f8b34b;
+  margin: 32px 0;
+  font-size: 24px;
 }
 
 .todo-form {
