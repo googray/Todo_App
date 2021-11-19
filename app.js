@@ -8,6 +8,8 @@ const update = document.querySelector(".btn-edit");
 const todoContent = document.querySelector(".todo-content");
 let todoField = document.querySelector(".todo-field");
 const input = document.querySelector(".todo-input");
+const overLay = document.querySelector("#overlay");
+const btnKnow = document.querySelector(".overlay-button");
 
 let todoText;
 function displayTodo(e) {
@@ -37,9 +39,6 @@ function displayTodo(e) {
 //
 btnTodo.addEventListener("click", displayTodo);
 
-const overLay = document.querySelector("#overlay");
-const btnKnow = document.querySelector(".overlay-button");
-
 // OVERLAY ON
 function on() {
   document.getElementById("overlay").style.display = "block";
@@ -63,11 +62,10 @@ function deleteRow(e) {
     todo.remove();
   }
 
-  todoApp.addEventListener("click", deleteRow);
-
   //CHECKED ROW
   if (item.classList[0] === "todo-task") {
     const todo = item.parentElement;
     todo.classList.toggle("checked");
   }
 }
+todoApp.addEventListener("click", deleteRow);
